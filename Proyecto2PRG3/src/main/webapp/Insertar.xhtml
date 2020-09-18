@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+         <h:form id="Pais">
+        <p:growl id="growl" sticky="true" />
+        
+        <p:dataTable id="paisList" var="p" value="#{paisBean.newproduct}">
+           
+            <p:column headerText="Id">
+                <p:inputText value="#{paisBean.newproduct.id}" converter="#{BigDecimal}" required="false" disabled="true"/>
+            </p:column>
+            
+            <p:column headerText="Nombre">
+                <p:inputText id="nombreP" value="#{paisBean.newproduct.nombre}"/>
+            </p:column>
+            
+            <p:column headerText="Abreviatura">
+                <p:inputText id="abre" value="#{paisBean.newproduct.abreviatura}"/>
+            </p:column>
+            
+            <p:column headerText="Idioma">
+                <p:inputText id="idio" value="#{paisBean.newproduct.idioma}"/>
+            </p:column>
+            
+            <p:column headerText="Moneda">
+                <p:inputText id="mona" value="#{paisBean.newproduct.moneda}"/>
+            </p:column>
+            
+            <p:column headerText="Religion">
+                <p:inputText id="reli" value="#{paisBean.newproduct.religion}"/>
+            </p:column>
+            
+            <p:column headerText="Nombre">
+                <p:commandButton update="paisList" value="Insertar" icon="pi pi-save"
+                                 action="#{paisBean.crear()}"
+                                 styleClass="ui-priority-primary">
+                </p:commandButton>
+            </p:column>
+            
+        </p:dataTable>
+        <br/>
+        </h:form>
+    </h:body>
+</html>
+
