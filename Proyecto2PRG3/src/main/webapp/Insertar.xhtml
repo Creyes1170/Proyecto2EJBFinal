@@ -4,14 +4,16 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <h:head>
-        <title>Facelet Title</title>
+        <title>Insertar pais</title>
     </h:head>
     <h:body>
+         <div class="container"> 
          <h:form id="Pais">
         <p:growl id="growl" sticky="true" />
         
-        <p:dataTable id="paisList" var="p" value="#{paisBean.newproduct}">
+        <p:dataTable id="paisList" var="p" value="#{paisBean.newproduct}" class="table table-hover" >
            
             <p:column headerText="Id">
                 <p:inputText value="#{paisBean.newproduct.id}" converter="#{BigDecimal}" required="false" disabled="true"/>
@@ -47,6 +49,7 @@
         </p:dataTable>
         <br/>
         </h:form>
+         </div>
     </h:body>
 </html>
 
